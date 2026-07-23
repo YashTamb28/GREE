@@ -111,6 +111,67 @@ h1, h2, h3, h4, h5 {
     text-transform: uppercase;
 }
 
+/* GREE Wordmark */
+.gree-wordmark {
+    font-family: var(--font-header);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+/* GREE Footer Stamp */
+.gree-footer {
+    width: 100%;
+    padding: 1.4rem 2rem;
+    border-top: 1px solid var(--border-dim);
+    background: var(--bg-darker);
+    margin-top: 4rem;
+    padding-bottom: calc(1.4rem + env(safe-area-inset-bottom));
+}
+
+.gree-footer-inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.gree-footer-wordmark {
+    font-family: var(--font-header);
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--accent-gold);
+}
+
+.gree-footer-divider {
+    color: var(--border-dim);
+    font-size: 1rem;
+}
+
+.gree-footer-sub {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+    .gree-footer-inner {
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: center;
+    }
+    .gree-footer-divider {
+        display: none;
+    }
+}
+
+
 .hud-actions {
     display: flex;
     align-items: center;
