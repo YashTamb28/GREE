@@ -2,341 +2,184 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GREE // Creative Service Packages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>PORTFOLIO // CREATIVE DIRECTION & PRODUCTION</title>
+    <meta name="description" content="Minimal luxury commercial video & visual production portfolio. Featured client suites: Nykaa, Freakins, Mahnoor Jewellery, Hemalchand Jewellers, Tiger Yaki, Pitstop Culture.">
     
-    <!-- Meta tags for SEO -->
-    <meta name="description" content="GREE is a premium creative agency providing next-gen Social Media, Content Production, Branding, and Website Design packages. Explore our interactive 3D platform.">
-    <meta name="keywords" content="creative agency, social media management, content production, branding, web design, creative service packages, 3D agency website">
-    
-    <!-- Google Fonts: Syne for heavy brutalist headers, Inter for clean layout -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+    <!-- Mobile App Properties -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1a1a1a">
+
+    <link rel="stylesheet" href="style.css?v=5.0">
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="custom-cursor" id="custom-cursor"></div>
-    <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
 
-    <!-- WebGL Canvas Background -->
-    <canvas id="webgl-canvas"></canvas>
+    <!-- HUD Top Navigation Header -->
+    <header class="hud-header">
+        <a href="#" class="brand-logo">
+            <span>PORTFOLIO</span>
+            <span class="brand-tag">DIR. 2026</span>
+        </a>
 
-    <!-- Initializer/Loader Screen -->
-    <div class="loader-overlay" id="loader-overlay">
-        <div class="loader-content">
-            <div class="loader-logo">GREE</div>
-            <div class="loader-subtitle">CREATIVE SERVICE PACKAGES</div>
-            <div class="loader-track">
-                <div class="loader-bar" id="loader-bar"></div>
-            </div>
-            <div class="loader-status" id="loader-status">INITIALIZING SYSTEM: 0%</div>
+        <div class="hud-actions">
+            <button class="hud-link" id="share-link-btn">[ SHARE DIRECTORY ]</button>
+            <a href="https://drive.google.com/drive/folders/1Xd4R-1ZTqcPNs973CXSwD4q8ETaH_XMv?usp=share_link" target="_blank" class="btn-gree btn-gold">
+                <span>DRIVE ARCHIVE ↗</span>
+            </a>
+            <button class="btn-gree" id="inquire-btn">
+                <span>INQUIRE BRIEF</span>
+            </button>
         </div>
-    </div>
+    </header>
 
-    <!-- UI HUD Layer -->
-    <div class="hud-container">
+    <!-- Main Editorial Portfolio Viewport -->
+    <main class="portfolio-container">
         
-        <!-- Header HUD -->
-        <header class="hud-header">
-            <div class="header-logo" id="hud-logo-btn">GREE <span class="logo-accent">// 2026</span></div>
-            <div class="header-status">
-                <span class="status-indicator-dot pulsing"></span>
-                <span class="status-text">REACTOR ONLINE // SECTOR 3D</span>
-            </div>
-            <div class="header-actions">
-                <button class="sound-toggle-btn" id="sound-btn" aria-label="Toggle Sound">
-                    <span class="sound-icon-bar bar-1"></span>
-                    <span class="sound-icon-bar bar-2"></span>
-                    <span class="sound-icon-bar bar-3"></span>
-                    <span class="sound-label">SOUND: OFF</span>
-                </button>
-                <button class="cta-build-btn" id="top-build-btn">LET'S BUILD</button>
-            </div>
-        </header>
-
-        <!-- Left HUD: Coordinates & Navigation -->
-        <aside class="hud-left">
-            <div class="coordinate-display">
-                <div class="coord-row"><span class="coord-label">SYS_LAT</span> <span class="coord-val" id="lat-val">0.0000</span></div>
-                <div class="coord-row"><span class="coord-label">SYS_LNG</span> <span class="coord-val" id="lng-val">0.0000</span></div>
-                <div class="coord-row"><span class="coord-label">SYS_DEP</span> <span class="coord-val" id="dep-val">00.00m</span></div>
-            </div>
-            
-            <nav class="hud-nav" id="hud-nav">
-                <button class="nav-dot active" data-index="0" data-section="hero">
-                    <span class="nav-dot-inner"></span>
-                    <span class="nav-label">00 // GREE Core</span>
-                </button>
-                <button class="nav-dot" data-index="1" data-section="social">
-                    <span class="nav-dot-inner"></span>
-                    <span class="nav-label">01 // Social Media</span>
-                </button>
-                <button class="nav-dot" data-index="2" data-section="content">
-                    <span class="nav-dot-inner"></span>
-                    <span class="nav-label">02 // Content Production</span>
-                </button>
-                <button class="nav-dot" data-index="3" data-section="branding">
-                    <span class="nav-dot-inner"></span>
-                    <span class="nav-label">03 // Branding</span>
-                </button>
-                <button class="nav-dot" data-index="4" data-section="website">
-                    <span class="nav-dot-inner"></span>
-                    <span class="nav-label">04 // Website Design</span>
-                </button>
-                <button class="nav-dot" data-index="5" data-section="consulting">
-                    <span class="nav-dot-inner"></span>
-                    <span class="nav-label">05 // Consulting</span>
-                </button>
-                <button class="nav-dot" data-index="6" data-section="builder">
-                    <span class="nav-dot-inner"></span>
-                    <span class="nav-label">06 // Let's Build</span>
-                </button>
-            </nav>
-        </aside>
-
-        <!-- Right HUD: Dynamic Side Panel -->
-        <aside class="hud-right" id="hud-right-panel">
-            <div class="instructions-panel" id="instruction-hud">
-                <div class="panel-tag">NAVIGATION GUIDE</div>
-                <h3>EXPLORE THE STRUCTURE</h3>
-                <p>Scroll your mouse wheel or drag to navigate through GREE's 3D Core. Click on service layers directly to unfold detail specifications.</p>
-                <div class="mouse-icon-container">
-                    <div class="mouse-icon">
-                        <div class="mouse-wheel"></div>
-                    </div>
-                    <span>SCROLL OR DRAG TO ORBIT</span>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Floating Overlay Content (Text panels overlaying the 3D canvas) -->
-        <div class="floating-content-layer" id="floating-content-layer">
-            
-            <!-- Section 0: Hero -->
-            <section class="content-section active" id="sec-hero">
-                <div class="hero-inner">
-                    <h1 class="hero-title">GREE</h1>
-                    <h2 class="hero-subtitle">CREATIVE SERVICE PACKAGES</h2>
-                    <p class="hero-tagline">Everything your brand needs to grow creatively.</p>
-                    <div class="scroll-prompt-container" id="hero-scroll-btn">
-                        <div class="chevron"></div>
-                        <div class="chevron"></div>
-                        <div class="chevron"></div>
-                        <span class="scroll-prompt-text">ENTER 3D MATRIX</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Details Overlay Template (Populated by js or hardcoded for SEO and fallback) -->
-            <!-- Details will be updated dynamically in a glassmorphic frame -->
-            <div class="glass-detail-frame" id="glass-detail-frame">
-                <button class="frame-close-btn" id="detail-close-btn" aria-label="Close details">&times;</button>
-                <div class="frame-content" id="detail-frame-content">
-                    <!-- Populated dynamically by app.js based on selected service -->
-                </div>
+        <!-- Hero Editorial Header -->
+        <section class="hero-editorial">
+            <div>
+                <h1>VISUAL DIRECTION &amp; CAMPAIGN PRODUCTION</h1>
+                <p>
+                    Commercial film production, high-fashion editorial lookbooks, and high-converting visual advertising created for industry-defining brands.
+                </p>
             </div>
 
-        </div>
-
-        <!-- Section 6: LET'S BUILD Dashboard Overlay -->
-        <div class="builder-dashboard" id="builder-dashboard">
-            <div class="dashboard-grid">
-                
-                <!-- Left Column: Configurator HUD -->
-                <div class="dash-panel config-panel">
-                    <div class="panel-tag">// REACT CONFIGURATOR</div>
-                    <h2 class="brutalist-title">BUILD YOUR STACK</h2>
-                    <p class="panel-desc font-sm">Toggle services below or click the floating 3D spheres in the reactor core to add items to your custom production invoice.</p>
-                    
-                    <div class="service-selector-accordion">
-                        <!-- Accordion sections for selecting package and add-ons -->
-                        <div class="selector-group">
-                            <h4>1. CHOOSE PRIMARY SERVICES</h4>
-                            <div class="service-toggle-list" id="primary-service-toggles">
-                                <!-- Social Media Management -->
-                                <button class="toggle-item-btn" data-id="social-start" data-price="25000" data-category="Social">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Social Start</span>
-                                    <span class="btn-price">₹25,000/mo</span>
-                                </button>
-                                <button class="toggle-item-btn" data-id="social-growth" data-price="35000" data-category="Social">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Social Growth</span>
-                                    <span class="btn-price">₹35,000/mo</span>
-                                </button>
-                                <button class="toggle-item-btn" data-id="social-elite" data-price="50000" data-category="Social">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Social Elite</span>
-                                    <span class="btn-price">₹50,000/mo</span>
-                                </button>
-                                
-                                <!-- Content Production -->
-                                <button class="toggle-item-btn" data-id="content-basic" data-price="20000" data-category="Content">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Content Production</span>
-                                    <span class="btn-price">₹20,000</span>
-                                </button>
-                                <button class="toggle-item-btn" data-id="content-pro" data-price="40000" data-category="Content">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Content Pro</span>
-                                    <span class="btn-price">₹40,000</span>
-                                </button>
-                                <button class="toggle-item-btn" data-id="content-sig" data-price="60000" data-category="Content">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Content Signature</span>
-                                    <span class="btn-price">₹60,000</span>
-                                </button>
-                                
-                                <!-- Branding -->
-                                <button class="toggle-item-btn" data-id="brand-foundation" data-price="20000" data-category="Branding">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Brand Foundation</span>
-                                    <span class="btn-price">₹20,000</span>
-                                </button>
-                                <button class="toggle-item-btn" data-id="brand-identity" data-price="40000" data-category="Branding">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Brand Identity</span>
-                                    <span class="btn-price">₹40,000</span>
-                                </button>
-                                <button class="toggle-item-btn" data-id="brand-exp" data-price="60000" data-category="Branding">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Brand Experience</span>
-                                    <span class="btn-price">₹60,000</span>
-                                </button>
-
-                                <!-- Web Design -->
-                                <button class="toggle-item-btn" data-id="web-launch" data-price="20000" data-category="Web">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Website Launch</span>
-                                    <span class="btn-price">₹20,000</span>
-                                </button>
-                                <button class="toggle-item-btn" data-id="web-business" data-price="40000" data-category="Web">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Website Business</span>
-                                    <span class="btn-price">₹40,000</span>
-                                </button>
-                                <button class="toggle-item-btn" data-id="web-commerce" data-price="60000" data-category="Web">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Website Commerce</span>
-                                    <span class="btn-price">₹60,000</span>
-                                </button>
-
-                                <!-- Consulting -->
-                                <button class="toggle-item-btn" data-id="consulting" data-price="15000" data-category="Consulting">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Consult Packages</span>
-                                    <span class="btn-price">₹15,000</span>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="selector-group">
-                            <h4>2. SELECT ADD-ONS</h4>
-                            <div class="add-on-toggle-grid" id="addon-service-toggles">
-                                <button class="toggle-item-btn btn-sm" data-id="ugc" data-price="5000" data-category="Addon">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">UGC Content</span>
-                                    <span class="btn-price">₹5,000</span>
-                                </button>
-                                <button class="toggle-item-btn btn-sm" data-id="influencer" data-price="10000" data-category="Addon">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Influencer Campaign</span>
-                                    <span class="btn-price">₹10,000</span>
-                                </button>
-                                <button class="toggle-item-btn btn-sm" data-id="extra-reels" data-price="8000" data-category="Addon">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Extra Reels Pack</span>
-                                    <span class="btn-price">₹8,000</span>
-                                </button>
-                                <button class="toggle-item-btn btn-sm" data-id="motion-graphics" data-price="7000" data-category="Addon">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Motion Graphics</span>
-                                    <span class="btn-price">₹7,000</span>
-                                </button>
-                                <button class="toggle-item-btn btn-sm" data-id="drone-coverage" data-price="12000" data-category="Addon">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Drone Coverage</span>
-                                    <span class="btn-price">₹12,000</span>
-                                </button>
-                                <button class="toggle-item-btn btn-sm" data-id="packaging-design" data-price="15000" data-category="Addon">
-                                    <span class="btn-check"></span>
-                                    <span class="btn-name">Packaging Design</span>
-                                    <span class="btn-price">₹15,000</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+            <div class="hero-stats-column">
+                <div class="stat-item">
+                    <span class="stat-lbl">CLIENT SUITES</span>
+                    <span class="stat-num" id="stat-brands">08</span>
                 </div>
-
-                <!-- Middle Column: WebGL Interactive Reactor Core is rendered here dynamically -->
-                <!-- Right Column: Invoice / Summary HUD -->
-                <div class="dash-panel invoice-panel">
-                    <div class="panel-tag">// LEDGER STATUS</div>
-                    <h3 class="invoice-title">SUMMARY</h3>
-                    
-                    <div class="invoice-list-container">
-                        <ul class="invoice-items" id="invoice-items-list">
-                            <li class="empty-invoice-msg">No services selected. Add services to begin calculation.</li>
-                        </ul>
-                    </div>
-
-                    <div class="invoice-footer">
-                        <div class="invoice-total-row">
-                            <span class="total-label">MONTHLY INVESTMENT (EST.)</span>
-                            <span class="total-val" id="monthly-total-val">₹0</span>
-                        </div>
-                        <div class="invoice-total-row">
-                            <span class="total-label">ONE-TIME SETUP/PROJECT (EST.)</span>
-                            <span class="total-val" id="onetime-total-val">₹0</span>
-                        </div>
-                        <div class="disclaimer-text">All packages include standard post-production. Sound synthesis active on core interaction nodes.</div>
-                        <button class="invoice-submit-btn" id="build-submit-btn">INITIATE PROJECT BUILD</button>
-                    </div>
+                <div class="stat-item">
+                    <span class="stat-lbl">REELS &amp; FILMS</span>
+                    <span class="stat-num" id="stat-reels">50+</span>
                 </div>
+                <div class="stat-item">
+                    <span class="stat-lbl">HIGH-RES STILLS</span>
+                    <span class="stat-num" id="stat-stills">100+</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-lbl">AD IMPRESSIONS</span>
+                    <span class="stat-num">10M+</span>
+                </div>
+            </div>
+        </section>
 
+        <!-- Brand Navigation Strip (Mobile Snap Scroll) -->
+        <div class="brand-strip-container">
+            <div class="brand-strip" id="brand-strip">
+                <!-- Rendered dynamically by app.js -->
             </div>
         </div>
 
-        <!-- Success Modal Overlay -->
-        <div class="success-overlay" id="success-overlay">
-            <div class="success-box">
-                <div class="success-icon">✓</div>
-                <h3>PROJECT STACK INITIATED</h3>
-                <p>A secure project docket has been compiled for your selected configurations.</p>
-                <div class="receipt-docket" id="receipt-docket"></div>
-                <button class="success-close-btn" id="success-done-btn">RETURN TO WORKSPACE</button>
-            </div>
+        <!-- Category Sub-Filter Pills -->
+        <div class="subfilter-bar">
+            <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); margin-right: 0.3rem;">[ FILTER ]</span>
+            <button class="subfilter-btn active" data-filter="all">ALL WORKS</button>
+            <button class="subfilter-btn" data-filter="videos">REELS &amp; FILMS</button>
+            <button class="subfilter-btn" data-filter="photos">STILLS &amp; LOOKBOOKS</button>
+            <button class="subfilter-btn" data-filter="bts">BEHIND THE SCENES</button>
         </div>
 
-        <!-- Depth Tracker HUD -->
-        <div class="depth-meter-container">
-            <div class="meter-line-glow"></div>
-            <div class="meter-handle" id="meter-handle"></div>
-            <div class="meter-mark sec-mark-0" data-index="0">00</div>
-            <div class="meter-mark sec-mark-1" data-index="1">01</div>
-            <div class="meter-mark sec-mark-2" data-index="2">02</div>
-            <div class="meter-mark sec-mark-3" data-index="3">03</div>
-            <div class="meter-mark sec-mark-4" data-index="4">04</div>
-            <div class="meter-mark sec-mark-5" data-index="5">05</div>
-            <div class="meter-mark sec-mark-6" data-index="6">06</div>
+        <!-- Active Brand Suite Spec Banner -->
+        <div class="brand-active-spec" id="brand-active-spec">
+            <!-- Rendered dynamically by app.js -->
         </div>
 
-        <!-- Footer HUD -->
-        <footer class="hud-footer">
-            <div class="footer-left">CORE_VER: v2.026.1 // THREEJS_DRV</div>
-            <div class="footer-right">© GREE CREATIVE SERVICE CO. ALL RIGHTS RESERVED.</div>
-        </footer>
+        <!-- Editorial Deliverables Media Grid -->
+        <section class="editorial-grid" id="editorial-grid">
+            <!-- Rendered dynamically by app.js -->
+        </section>
 
+    </main>
+
+    <!-- Mobile Native Bottom Navigation HUD -->
+    <div class="mobile-bottom-hud">
+        <div class="mobile-hud-row">
+            <button class="mobile-hud-btn" id="mobile-share-btn">
+                <span style="font-size: 1rem;">🔗</span>
+                <span>SHARE</span>
+            </button>
+            <a href="https://drive.google.com/drive/folders/1Xd4R-1ZTqcPNs973CXSwD4q8ETaH_XMv?usp=share_link" target="_blank" class="mobile-hud-btn gold">
+                <span style="font-size: 1rem;">📁</span>
+                <span>DRIVE ↗</span>
+            </a>
+            <button class="mobile-hud-btn" id="mobile-inquire-btn">
+                <span style="font-size: 1rem;">⚡</span>
+                <span>INQUIRE</span>
+            </button>
+        </div>
     </div>
 
-    <!-- External Libraries via CDNs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Lightbox Modal Player -->
+    <div class="modal-overlay" id="lightbox-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <h4 id="modal-title-text">Campaign Deliverable</h4>
+                    <p id="modal-subtitle-text">Client Suite • Category</p>
+                </div>
+                <button class="close-btn" id="modal-close">&times;</button>
+            </div>
+
+            <div class="modal-body" id="modal-media-body">
+                <button class="modal-nav prev" id="modal-prev">&#10094;</button>
+                <div id="modal-embed-target" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                    <!-- iFrame / Image target -->
+                </div>
+                <button class="modal-nav next" id="modal-next">&#10095;</button>
+            </div>
+
+            <div class="modal-footer">
+                <a href="#" target="_blank" class="btn-gree" id="modal-drive-link">
+                    <span>VIEW IN DRIVE ↗</span>
+                </a>
+                <button class="btn-gree btn-gold" id="modal-inquire-direct">
+                    <span>BOOK CAMPAIGN</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inquiry Brief Overlay Drawer -->
+    <div class="modal-overlay" id="inquiry-overlay">
+        <div class="modal-container" style="max-width: 500px;">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <h4>INITIATE CAMPAIGN BRIEF</h4>
+                    <p>COMMERCIAL PRODUCTION &amp; CREATIVE DIRECTION</p>
+                </div>
+                <button class="close-btn" id="inquiry-close">&times;</button>
+            </div>
+
+            <form id="brief-form" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1.2rem;">
+                <div>
+                    <label style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 0.4rem;">CLIENT / BRAND NAME *</label>
+                    <input type="text" id="brief-brand" required style="width: 100%; background: var(--bg-color); border: 1px solid var(--border-dim); padding: 0.8rem; color: var(--text-color); font-family: var(--font-body); font-size: 16px; outline: none;" placeholder="e.g. Nykaa / Marketing Team" />
+                </div>
+                <div>
+                    <label style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 0.4rem;">EMAIL ADDRESS *</label>
+                    <input type="email" id="brief-email" required style="width: 100%; background: var(--bg-color); border: 1px solid var(--border-dim); padding: 0.8rem; color: var(--text-color); font-family: var(--font-body); font-size: 16px; outline: none;" placeholder="contact@brand.com" />
+                </div>
+                <div>
+                    <label style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 0.4rem;">DELIVERABLES REQUESTED</label>
+                    <select id="brief-scope" style="width: 100%; background: var(--bg-color); border: 1px solid var(--border-dim); padding: 0.8rem; color: var(--text-color); font-family: var(--font-body); font-size: 16px; outline: none;">
+                        <option value="reels">Commercial Reels &amp; Video Ads</option>
+                        <option value="stills">Fashion / Luxury Lookbook Stills</option>
+                        <option value="full">Full Campaign Suite (Videos + Stills + BTS)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-gree btn-gold" style="width: 100%; padding: 0.9rem; justify-content: center; margin-top: 0.5rem; min-height: 48px;">
+                    <span>SUBMIT INQUIRY</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notice Container -->
+    <div id="toast-root"></div>
+
+    <script src="portfolio_data.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
